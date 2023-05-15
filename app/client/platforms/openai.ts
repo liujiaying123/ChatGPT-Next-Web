@@ -12,6 +12,7 @@ export class ChatGPTApi implements LLMApi {
   path(path: string): string {
     const openaiUrl = useAccessStore.getState().openaiUrl;
     if (openaiUrl.endsWith("/")) openaiUrl.slice(0, openaiUrl.length - 1);
+    console.log(openaiUrl);
     return [openaiUrl, path].join("/");
   }
 
